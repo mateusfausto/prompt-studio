@@ -479,8 +479,9 @@ h1,h2,h3{ font-family: var(--font-display); margin: 0; }
   .topbar__row{ gap: 10px; }
   .content{ padding: 18px 14px 50px; }
   .grid{ grid-template-columns: 1fr; gap: 12px; }
-  .prompt-dialog{ width: 100vw; max-height: 100vh; height: 100vh; border-radius: 0; }
-  .prompt-dialog__form{ max-height: 100vh; }
+  .prompt-dialog{ width: 100vw; max-height: 100dvh; border-radius: 0; }
+  .prompt-dialog__form{ max-height: 100dvh; }
+  .prompt-dialog__textarea{ min-height: 160px; }
 }
 
 /* Telas estreitas: marca e toggle na primeira linha, busca na segunda
