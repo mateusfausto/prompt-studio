@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Studio — Templates para times de produto</title>
+<meta name="description" content="Biblioteca de templates de prompt para Designers, Devs, POs e Gerentes de Projeto.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='8' height='8' rx='2' fill='%234A47D6'/%3E%3Crect x='13' y='13' width='8' height='8' rx='2' fill='%234A47D6'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Ícones são SVG inline (icons.js), não fonte de ligatures: assim eles nunca
+     dependem de rede e nunca "estouram" o layout caso uma fonte falhe. -->
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar__row">
+    <div class="topbar__brand">
+      <span class="topbar__mark" aria-hidden="true">
+        <span class="icon" data-icon="mosaic" data-icon-size="22"></span>
+      </span>
+      <div class="topbar__titles">
+        <h1 class="topbar__title">Prompt Studio</h1>
+        <p class="topbar__subtitle">Templates prontos para o dia a dia de desenvolvimento de produto</p>
+      </div>
+    </div>
+
+    <div class="topbar__actions">
+      <label class="search" for="searchInput">
+        <span class="icon search__icon" data-icon="search" data-icon-size="20" aria-hidden="true"></span>
+        <input
+          id="searchInput"
+          type="text"
+          class="search__input"
+          placeholder="Buscar por tarefa, ex: “retrospectiva”, “code review”…"
+          autocomplete="off"
+        >
+        <button type="button" class="search__clear" id="searchClear" aria-label="Limpar busca" hidden>
+          <span class="icon" data-icon="close" data-icon-size="18"></span>
+        </button>
+      </label>
+
+      <button type="button" class="icon-btn" id="themeToggle" aria-label="Alternar tema claro/escuro">
+        <span class="icon" id="themeIcon" data-icon="dark_mode" data-icon-size="20"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="chiprow" id="chipRow" aria-label="Filtrar por papel">
+    <!-- chips injetados via JS -->
+  </nav>
+</header>
+
+<main id="main" class="content">
+  <div class="content__meta">
+    <p class="content__count" id="resultCount" role="status" aria-live="polite"></p>
+  </div>
+
+  <section class="grid" id="cardGrid" aria-label="Templates de prompt"></section>
+
+  <div class="empty-state" id="emptyState" hidden>
+    <span class="icon empty-state__icon" data-icon="search_off" data-icon-size="44" aria-hidden="true"></span>
+    <h2>Nenhum template encontrado</h2>
+    <p>Tente outro termo de busca ou volte para “Todos” nos filtros.</p>
+    <button type="button" class="btn btn--tonal" id="resetFilters">Limpar filtros</button>
+  </div>
+
+  <footer class="footer">
+    <p>Prompt Studio · Biblioteca aberta de templates para Design, Desenvolvimento, Produto e Gestão de Projetos.</p>
+  </footer>
+</main>
+
+<!-- Dialog com o prompt completo -->
+<dialog class="prompt-dialog" id="promptDialog">
+  <form method="dialog" class="prompt-dialog__form">
+    <header class="prompt-dialog__header">
+      <div>
+        <span class="chip chip--static" id="dialogRoleChip"></span>
+        <h2 class="prompt-dialog__title" id="dialogTitle"></h2>
+        <p class="prompt-dialog__desc" id="dialogDesc"></p>
+      </div>
+      <button type="submit" class="icon-btn" aria-label="Fechar">
+        <span class="icon" data-icon="close" data-icon-size="20"></span>
+      </button>
+    </header>
+
+    <textarea
+      class="prompt-dialog__textarea"
+      id="dialogTextarea"
+      readonly
+      spellcheck="false"
+      aria-label="Texto completo do template de prompt"
+    ></textarea>
+
+    <footer class="prompt-dialog__footer">
+      <span class="prompt-dialog__hint">Edite os campos entre colchetes [ ] antes de usar.</span>
+      <button type="button" class="btn btn--filled" id="copyBtn">
+        <span class="icon" id="copyIcon" data-icon="content_copy" data-icon-size="18"></span>
+        <span id="copyLabel">Copiar prompt</span>
+      </button>
+    </footer>
+  </form>
+</dialog>
+
+<div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
+
+<script src="icons.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
