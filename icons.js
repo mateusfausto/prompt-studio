@@ -17,6 +17,7 @@ const ICON_PATHS = {
   flag: '<path d="M5 21V4.2c0-.4.32-.7.72-.63C8 4 10.4 5.5 13 5.5c2.2 0 3.7-1.2 5.6-.9.4.06.7.4.7.8v7.9c0 .4-.32.7-.7.8-1.9.3-3.4-.9-5.6-.9-2.6 0-5 1.5-7.28 1.13"/><path d="M5 21V13"/>',
   assignment: '<rect x="5" y="4.5" width="14" height="16" rx="2"/><rect x="8.5" y="3" width="7" height="3" rx="1"/><path d="M8.5 11h7M8.5 14.5h7M8.5 17.5h4.5"/>',
   arrow_forward: '<path d="M4.5 12h15M13.5 5.5L20 12l-6.5 6.5"/>',
+  arrow_upward: '<path d="M12 19V5M5 12l7-7 7 7"/>',
   content_copy: '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/>',
   check: '<path d="M4.5 12.5l5 5 10-11"/>',
   search_off: '<path d="M9 4.5a6.5 6.5 0 0 1 6.06 8.85M6.4 6.5a6.5 6.5 0 0 0 8.85 9.35"/><path d="M3.5 3.5l17 17"/><path d="M20 20l-4.9-4.9"/>',

@@ -10,6 +10,8 @@
   const searchClear = document.getElementById("searchClear");
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
+  const mainContainer = document.getElementById("main");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   const dialog = document.getElementById("promptDialog");
   const dialogRoleChip = document.getElementById("dialogRoleChip");
@@ -265,6 +267,22 @@
   themeToggle.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
     applyTheme(current === "dark" ? "light" : "dark");
+  });
+
+  // ----------------------------------------------------------- scroll to top
+  mainContainer.addEventListener("scroll", () => {
+    if (mainContainer.scrollTop > 300) {
+      scrollTopBtn.hidden = false;
+    } else {
+      scrollTopBtn.hidden = true;
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    mainContainer.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 
   // ---------------------------------------------------------------- init

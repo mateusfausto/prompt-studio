@@ -466,6 +466,39 @@ h1,h2,h3{ font-family: var(--font-display); margin: 0; }
 
 :root[data-theme="dark"] .snackbar{ background: #E7E3F0; color: #1B1B23; }
 
+/* ------------------------------------------------------------ fab-scroll */
+
+.fab-scroll {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+  box-shadow: var(--elev-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 40;
+  transition: background-color .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.fab-scroll:hover {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  box-shadow: var(--elev-3);
+  transform: translateY(-4px);
+}
+.fab-scroll:active {
+  transform: translateY(-2px) scale(.94);
+}
+.fab-scroll[hidden] {
+  display: none;
+}
+
 /* -------------------------------------------------------------- motion */
 
 @media (prefers-reduced-motion: reduce){
@@ -507,6 +540,12 @@ h1,h2,h3{ font-family: var(--font-display); margin: 0; }
     max-width: none;
     flex-basis: 100%;
     order: 1;
+  }
+  .fab-scroll {
+    bottom: 24px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
   }
 }
 
